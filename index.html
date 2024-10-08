@@ -4,26 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculadora investimento</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <div class="container"></div>
+    
+
 <div class="calculator">
     <h2> Calculadora De Investimento</h2>
 
 <div class="input-group">
-    <label for="principal"> Valor inicial:</label>
-    <input type="number" id="principal" step="any" required >
+    <label for="principal"> Valor inicial(R$):</label>
+    <input type="number" id="principal" placeholder="R$" step="any" required><br>
+
 </div>
+
 <div  class="input-group"> 
     <label for="interest"> Taxa  de juros anual (%):</label>
-    <input type="number" id="interest" step="any" required>
-</div>
+    <input type="number" id="interest" placeholder="0,00"  step="any" required>
+</div><br>
+
 <div class="input-group">
     <label for="years"> Período de investimento(Anos):</label>
-    <input type="number" id="years" step="1" required>
+    <input type="number" id="years" placeholder="0,00" step="1" required>
+</div><br>
+
+<button onclick="calculateInvestment()" id="button" input type="button"result=""> Calcular </button>
+
+<label for="result">Valor Total:</label>
+<input type="text" id="result" readonly>
+
+
+<div class="result" id="result"> Insira Os Valores E Clique Em Calcular.</div>
 </div>
-<button onclick="calculateInvestment(100)"> CALCULAR</button>
-<div class="result" id="result"></div>
+
+
 </div>
-<script src="script.js"></script>
+<script >
+   function calculateInvestiment(){
+    
+    var principal= parseFloat( document.getElementById('principal').value);
+    
+    var interestrate= parseFloat(document.getElementById('interest').value);
+    var years=parseInt(document.getElementById('years').value);
+    if(isNaN(principal)||isNaN(interestrate) isNaN(years) ){
+        document.getElementById('result').textContent="Por Favor,Insira Valores Válidos.";
+   return;
+    }
+    var futurevalue=principal*Math.pow(1 +(interestrate / 100), years);
+
+    
+
+    var resultElement=documet.getElementById('result');
+resultElement.textContent=`Valor futuro do investimento:"R$"+ string{ futurevalue.toFixed(2)}`;
+
+}
+</script>
 
 
 <body>
