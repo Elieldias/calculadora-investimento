@@ -11,8 +11,8 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: color:blue;
-    margin: 0;
+    background: color blue ;
+    margin: 0;}
 
     .container{
         display: flex;
@@ -22,7 +22,7 @@ height: 100%;
 padding: 20px;
     }
     
-}
+
 .calculator{
     background-color: rgb(77, 255, 0);
     padding: 30px;
@@ -60,7 +60,7 @@ input{
     color: #333;
  }
 
-   { input:focus
+  input:focus {
         border-color: #0056b3;
     }
 
@@ -96,8 +96,9 @@ button{
     padding: 10px;
     font-size: 20px;
 }
-@media(max-width:480px)
-    .calculator{
-        padding: 15px;
-        max-width: 100%;
-    }
+@media (max-width:480px ){
+    .calculator{ 
+        padding : 15px;
+        max-width:  100% ;
+    }  
+}
